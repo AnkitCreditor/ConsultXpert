@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background: #f4f6f9;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  flex: 3;
+  background: url('../assets/servicebg.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.85);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+.overlay h1 {
+  font-size: 40px;
+  color: #1e3a8a;
+}
+
+.overlay p {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+  height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #333;
+  animation: blink 0.75s step-end infinite;
+}
+
+.right-panel {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 30px;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.toggle button {
+  flex: 1;
+  padding: 10px;
+  background: #e0e7ff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.toggle .active {
+  background: #1e3a8a;
+  color: #fff;
+}
+
+.form {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.form.active-form {
+  display: flex;
+}
+
+.name-group {
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.animated-btn {
+  padding: 12px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.animated-btn:hover {
+  background: #3b5fe0;
+  transform: translateY(-2px);
+}
+
+.switch-msg {
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+}
+
+.switch-msg span {
+  color: #1e3a8a;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.forgot {
+  font-size: 13px;
+  color: #555;
+  text-align: right;
+  cursor: pointer;
+}
+
+#passwordMsg {
+  font-size: 12px;
+  color: red;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel, .right-panel {
+    flex: none;
+    width: 100%;
+    height: 50%;
+  }
+
+  .overlay {
+    padding: 30px;
+  }
+}
